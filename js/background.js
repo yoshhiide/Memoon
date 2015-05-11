@@ -13,7 +13,7 @@ chrome.storage.onChanged.addListener(function(changes, namespace){
   if(namespace === "sync"){
     if(changes.memo){
       //ブラウザ右上のボタンのバッチを変更
-      setbadge(iconSet(changes.memo.newValue));
+      setbadge(iconSet(JSON.parse(changes.memo.newValue)));
     }
   }
 });
@@ -39,7 +39,7 @@ function whenGet(getKey, func){
 function getCSAsync(getKey){
   var dfd = new $.Deferred;
   chrome.storage.sync.get(function(items){
-    if(items.hasOwnProperty(getKey)){
+    if(items && items.hasOwnProperty(getKey)){
       dfd.resolve(JSON.parse(items[getKey]));
     }else{
       dfd.reject();
@@ -53,9 +53,9 @@ function getCSAsync(getKey){
  */
 function iconSet(ex_on){
   if(ex_on){
-    return { text: 'ON', color: '#52C650'};
+    return { text: 'Exis', color: '#52C650'};
   }else{
-    return { text: 'OFF', color: '#969696'};
+    return { text: 'None', color: '#969696'};
   }
 }
 

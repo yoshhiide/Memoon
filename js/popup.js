@@ -2,7 +2,9 @@
  * Memo初期値セット(chrome.storage取得)
  */
 whenGet('memo', function(getdata){
-  $('#memo').val(getdata);
+  if(getdata){
+    $('#memo').val(getdata);
+  }
 });
 
 /**

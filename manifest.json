@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Memo",
+  "short_name": "Memo",
+  "version": "0.1",
+  "description": "Memo.create",
+  "icons" : {
+    "16": "img/icon16.png",
+    "48": "img/icon48.png",
+    "128": "img/icon128.png"
+  },
+  "browser_action": {
+    "default_icon": "img/icon48.png",
+    "default_title": "Memo",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "permissions": [
+    "storage"
+  ]
+}

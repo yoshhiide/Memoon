@@ -4,6 +4,7 @@
   "short_name": "Memo",
   "version": "0.1",
   "description": "Memo.create",
+  "author": "yoshhiide",
   "icons" : {
     "16": "img/icon16.png",
     "48": "img/icon48.png",
